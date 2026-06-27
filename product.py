@@ -33,6 +33,25 @@ def add_product(product):
     return False
 
 def edit_product(product_id):
+    """
+    Edit a current product in the products list
+
+    Args:
+        product_id: ID of the product to edit
+    Returns:
+        bool: True if product edited successfully, False otherwise
+    """
+    # Find the product to see if it exists
+    for current_product in products:
+        if current_product.id == product_id:
+            #edit the product if the product exits
+            current_product.name = input("Enter new product name: ")
+            current_product.description = input("Enter new product description: ")
+            current_product.price = float(input("Enter new product price: "))
+            current_product.quantity = int(input("Enter new product quantity: "))
+            return True
+        else:
+            return False  # Product ID not found, cannot edit
 
 def delete_product(product_id):
 
