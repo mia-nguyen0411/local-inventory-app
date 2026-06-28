@@ -54,6 +54,21 @@ def edit_product(product_id):
             return False  # Product ID not found, cannot edit
 
 def delete_product(product_id):
+    """
+    Delete a product from the product list
+
+    Args:
+        product_id: ID of the product to delete
+    Returns:
+        bool: True if product deleted successfully, False otherwise
+    """
+    ##Find the product in the list
+    for current_product in products:
+        if current_product.id == product_id:
+            products.remove(current_product)
+            return True
+        else:
+            return False  # Product ID not found, cannot delete
 
 def get_all_product(product_id):
 
