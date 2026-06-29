@@ -70,6 +70,16 @@ def delete_product(product_id):
         else:
             return False  # Product ID not found, cannot delete
 
-def get_all_product(product_id):
+def get_product_by_id(product_id):
+    """
+    Get the product details by product ID
 
-def get_product_by_id(product):
+    Args:
+        product_id: ID of the product to get
+    Returns:
+        Product: Product object if found, None otherwise
+    """
+    for current_product in products:
+        if current_product.id == product_id:
+            return current_product
+    return None  # Product ID not found
